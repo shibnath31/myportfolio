@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shibnath Rana | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --accent-color: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 2rem;
+            overflow: hidden;
+        }
+        
+        .text-primary {
+            color: var(--primary-color);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+        }
+        
+        .btn-dark {
+            background: var(--dark-color);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-transform: uppercase;
+            color: var(--dark-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #777;
+            margin-bottom: 3rem;
+        }
+        
+        /* Header */
+        #header {
+            background: var(--dark-color);
+            color: #fff;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        #header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        
+        #header .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        #header .logo span {
+            color: var(--primary-color);
+        }
+        
+        #nav ul {
+            display: flex;
+        }
+        
+        #nav ul li {
+            margin-left: 2rem;
+        }
+        
+        #nav ul li a {
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        #nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), 
+                        url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        #hero .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        #hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        #hero h1 span {
+            color: var(--primary-color);
+        }
+        
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        #hero .social {
+            margin: 2rem 0;
+        }
+        
+        #hero .social a {
+            color: #fff;
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        #hero .social a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* About Section */
+        #about {
+            padding: 6rem 0;
+            background: #fff;
+        }
+        
+        #about .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        #about .about-img {
+            position: relative;
+        }
+        
+        #about .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        #about .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        #about .about-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        #about .skills {
+            margin-top: 2rem;
+        }
+        
+        #about .skills h4 {
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        #about .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        #about .skill {
+            background: var(--light-color);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        
+        /* Services Section */
+        #services {
+            padding: 6rem 0;
+            background: var(--light-color);
+        }
+        
+        #services .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        #services .service {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        #services .service:hover {
+            transform: translateY(-10px);
+        }
+        
+        #services .service i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        #services .service h3 {
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        /* Projects Section */
+        #projects {
+            padding: 6rem 0;
+            background: #fff;
+        }
+        
+        #projects .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        #projects .project {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        #projects .project img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        #projects .project:hover img {
+            transform: scale(1.1);
+        }
+        
+        #projects .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(44, 62, 80, 0.9);
+            color: #fff;
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        #projects .project:hover .project-overlay {
+            transform: translateY(0);
+        }
+        
+        #projects .project-overlay h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        #projects .project-overlay a {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        /* Contact Section */
+        #contact {
+            padding: 6rem 0;
+            background: var(--light-color);
+        }
+        
+        #contact .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        #contact .contact-info {
+            margin-bottom: 2rem;
+        }
+        
+        #contact .contact-info h3 {
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        #contact .contact-info p {
+            margin-bottom: 1rem;
+        }
+        
+        #contact .contact-info i {
+            margin-right: 1rem;
+            color: var(--primary-color);
+        }
+        
+        #contact .contact-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        #contact .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+        
+        #contact .contact-form input,
+        #contact .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        #contact .contact-form textarea {
+            height: 150px;
+        }
+        
+        /* Footer */
+        #footer {
+            background: var(--dark-color);
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        #footer p {
+            margin-bottom: 1rem;
+        }
+        
+        #footer .social a {
+            color: #fff;
+            margin: 0 0.5rem;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        
+        #footer .social a:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #header .container {
+                padding: 1rem;
+            }
+            
+            #nav {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--dark-color);
+                transition: all 0.3s ease;
+            }
+            
+            #nav.active {
+                left: 0;
+            }
+            
+            #nav ul {
+                flex-direction: column;
+                padding: 2rem;
+            }
+            
+            #nav ul li {
+                margin: 1rem 0;
+            }
+            
+            .hamburger {
+                display: block;
+                font-size: 1.5rem;
+            }
+            
+            #hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            #about .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="logo">Shibnath <span>Rana</span></div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hi, I'm <span>Shibnath Rana</span></h1>
+                <p>I’m Shibnath Rana a Data Science and AI/ML enthusiast with a strong foundation in Cybersecurity, passionate about transforming raw data into actionable insights and robust intelligent systems. I specialize in building machine learning models, designing end-to-end data pipelines, and securing digital infrastructures to ensure both innovation and protection, and many more....</p>
+                <div class="social">
+                    <a href="https://github.com/shibnath31"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/shibnath-rana-77323b2a9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://x.com/ShibnathRana"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/shibnath_rana_?igsh=MWZsd2h3YXl5eG5ocA=="><i class="fab fa-instagram"></i></a>
+                </div>
+                <a href="#about" class="btn btn-dark">About Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <p class="section-subtitle">Get to know me better</p>
+            
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="shibnathrana.jpg" alt="Shibnath Rana">
+                </div>
+                <div class="about-text">
+                    <h3>Who am I?</h3>
+                    <p>I am a passionate cybersecurity enthusiast and versatile developer with expertise in Python, HTML/CSS, AI/ML, and NLP. My focus lies in securing digital systems while leveraging cutting-edge technologies like artificial intelligence to solve complex problems. With hands-on experience in cybersecurity tools, web development, and machine learning models, I aim to bridge the gap between security and intelligent automation.</p>
+                    <p>My passion for coding started when I was in college, and since then I've been constantly learning new technologies and improving my skills to deliver the best solutions for my clients.</p>
+                    <p> <h3>Education</h3>
+                        BCA: Belda College<br>
+                         Intermediate: Sundarar High School [92.00%]<br>
+                           Matriculation: Kaliapara Ramkrishna Vidyabhaban [64.85%] </p>
+                    <div class="skills">
+                        <h4>My Skills</h4>
+                        <div class="skills-list">
+                            <div class="skill">HTML</div>
+                            <div class="skill">CSS</div>
+                            <div class="skill">Cyber Security</div>
+                            <div class="skill">Python</div>
+                            <div class="skill">PHP</div>
+                            <div class="skill">C</div>
+                            <div class="skill">C++</div>
+                            <div class="skill">Prolog</div>
+                            <div class="skill">Overleaf</div>
+                            <div class="skill">AI</div>
+                            <div class="skill">Machine Learning</div>
+                            <div class="skill">Data Science</div>
+                            <div class="skill">SQL</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="btn">Hire Me</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">My <span>Services</span></h2>
+            <p class="section-subtitle">What I offer to my clients</p>
+            
+            <div class="services-container">
+                <div class="service">
+                    <h3>Web Development</h3>
+                    <p>Custom website development from scratch using modern technologies to ensure fast, secure, and scalable solutions.</p>
+                </div>
+                <div class="service">
+                    <h3>Cyber Security</h3>
+                    <p>provide information, strategies, and designs to improve digital security. They strengthen your online defences and shield you against cyber attacks. Examples of cyber security services include: Cyber security assessments.</p>
+                </div>
+                <div class="service">
+                    
+                    <h3>UI/UX Design</h3>
+                    <p>Designing intuitive and beautiful user interfaces that provide excellent user experience.</p>
+                </div>
+                <div class="service">
+                    <h3>E-commerce Solutions</h3>
+                    <p>Building online stores with secure payment gateways and inventory management systems.</p>
+                </div>
+            
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">My <span>Projects</span></h2>
+            <p class="section-subtitle">Some of my recent works</p>
+            
+            <div class="projects-container">
+                <div class="project">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Project 1">
+                    <div class="project-overlay">
+                        <h3>E-Learning Website</h3>
+                        <p>This Websites Help From Learning Of Cyber Security.</p>
+                        <a href="https://sites.google.com/view/apnas/home">View Project</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Project 2">
+                    <div class="project-overlay">
+                        <h3>Portfolio Website</h3>
+                        <p>A modern portfolio website for a photographer.</p>
+                        <a href="https://sajal-jana.github.io/FreeDom/">View Project</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="image.png" alt="Project 3">
+                    <div class="project-overlay">
+                        <h3>Research Paper</h3>
+                        <p>Spear Phishing Email Detection Using Machine Learning.</p>
+                        <a href="#">View Project</a>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact <span>Me</span></h2>
+            <p class="section-subtitle">Get in touch for projects or collaborations</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Medinipur, West Bengal, India</p>
+                    <p><i class="fas fa-envelope"></i> shibnathrana0@gamil.com</p>
+                    <p><i class="fas fa-phone"></i> +91 8101062528</p>
+                    
+                    <div class="social">
+                        <a href="https://github.com/shibnath31"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/shibnath-rana-77323b2a9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://x.com/ShibnathRana"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/shibnath_rana_?igsh=MWZsd2h3YXl5eG5ocA=="><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2025 Shibnath Rana. All Rights Reserved.</p>
+            
+            <p>Designed & Developed by Shibnath Rana</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const nav = document.querySelector('#nav');
+        
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+        
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                }
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Sticky Header on Scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('#header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+    </script>
+</body>
+</html>
