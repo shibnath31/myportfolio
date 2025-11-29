@@ -91,6 +91,18 @@
             border: 1px solid var(--primary-color);
             box-shadow: 0 5px 20px rgba(0, 188, 212, 0.6);
         }
+        
+        .btn-cv {
+            background: var(--accent-color);
+            color: var(--text-color);
+            box-shadow: 0 0 15px rgba(255, 64, 129, 0.4);
+        }
+        
+        .btn-cv:hover {
+            background: #e91e63;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(255, 64, 129, 0.6);
+        }
 
         .section-title {
             font-size: 2.5rem;
@@ -239,6 +251,13 @@
             color: var(--primary-color);
             transform: scale(1.2);
             text-shadow: 0 0 10px var(--primary-color);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
         
         /* About Section */
@@ -559,6 +578,11 @@
             border-color: var(--accent-color);
             box-shadow: 0 0 8px var(--accent-color);
         }
+        
+        .cv-download {
+            margin-top: 20px;
+            text-align: center;
+        }
 
         /* Footer */
         #footer {
@@ -587,6 +611,14 @@
             .section-title {
                 font-size: 2rem;
             }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .hero-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -614,14 +646,19 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Hi, I'm <span>Shibnath Rana</span></h1>
-                <p>I’m Shibnath Rana, a **Data Analyst** and **AI/ML Engineer** passionate about transforming raw data into actionable insights and robust intelligent systems. I specialize in building machine learning models, designing end-to-end data pipelines, and securing digital infrastructures.</p>
+                <p>I'm Shibnath Rana, a **Data Analyst** and **AI/ML Engineer** passionate about transforming raw data into actionable insights and robust intelligent systems. I specialize in building machine learning models, designing end-to-end data pipelines, and securing digital infrastructures.</p>
                 <div class="social">
                     <a href="https://github.com/shibnath31"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/shibnath-rana-77323b2a9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
                     <a href="https://x.com/ShibnathRana"><i class="fab fa-twitter"></i></a>
                     <a href="https://www.instagram.com/shibnath_rana_?igsh=MWZsd2h3YXl5eG5ocA=="><i class="fab fa-instagram"></i></a>
                 </div>
-                <a href="#about" class="btn btn-dark">Explore My Data Stack</a>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-dark">Explore My Data Stack</a>
+                    <a href="ShibnathRanaCV.pdf" class="btn btn-cv" download>
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -809,6 +846,12 @@
                         <a href="https://x.com/ShibnathRana"><i class="fab fa-twitter"></i></a>
                         <a href="https://www.instagram.com/shibnath_rana_?igsh=MWZsd2h3YXl5eG5ocA=="><i class="fab fa-instagram"></i></a>
                     </div>
+                    
+                    <div class="cv-download">
+                        <a href="ShibnathRanaCV.pdf" class="btn btn-cv" download>
+                            <i class="fas fa-download"></i> Download My CV
+                        </a>
+                    </div>
                 </div>
                 
                 <form class="contact-form" action="https://formspree.io/f/xldklepd" method="POST">
@@ -874,18 +917,4 @@
         });
     </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
