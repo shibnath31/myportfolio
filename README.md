@@ -85,7 +85,8 @@ or use VS Code Live Server.
 
 ## 📷 Preview
 
-> Add screenshots here
+<img width="1898" height="870" alt="image" src="https://github.com/user-attachments/assets/215459ed-306d-41f2-b2ff-ebaa508a0f8e" />
+
 
 ```
 assets/images/portfolio-preview.png
